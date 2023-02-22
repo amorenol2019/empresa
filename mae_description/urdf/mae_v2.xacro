@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="mae_v2" >
+
+    <xacro:arg name="robot_namespace" default="/" /> 
+
+    <!--xacro:include filename="$(find scout_description)/urdf/scout_v2.xacro" /-->
+    <xacro:include filename="$(find scout_mini_description)/urdf/scout_mini.xacro" />
+    <xacro:include filename="$(find mae_description)/urdf/mae_oak_d.xacro" />
+
+
+
+    <!--Camera OAK-D Properties-->
+    <xacro:property name="oakd_length" value="0.0803" />
+    <xacro:property name="oakd_width" value="0.0957" />
+    <xacro:property name="oakd_depth" value="0.1267" />
+    <xacro:property name="oakd_mass" value="0.15" />
+
+    <!-- oak-d camera macros-->
+    <xacro:mae_oak_d  mount_point="in_front">
+        <origin xyz="${-base_x_size/2 + 0.1} 0 0.1" rpy="0 0 3.14" />
+    </xacro:mae_oak_d>
+    
+</robot>
